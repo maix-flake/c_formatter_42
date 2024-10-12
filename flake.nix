@@ -1,9 +1,13 @@
 {
   description = "Flake utils demo";
 
-  inputs.flake-utils.url = "github:numtide/flake-utils";
-  inputs.c_formatter_42_src.url = "github:dawnbeen/c_formatter_42";
-  inputs.c_formatter_42_src.flake = false;
+  inputs = {
+    flake-utils.url = "github:numtide/flake-utils";
+    c_formatter_42_src = {
+      url = "github:dawnbeen/c_formatter_42";
+      flake = false;
+    };
+  };
 
   outputs = {
     self,
@@ -14,10 +18,10 @@
     flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
+        clang-format-wrapper = pkgs.writeShellScript "clang-format-linux" ''${pkgs.clang-tools}/bin/clang-format "$@" '';
         src_patched = pkgs.stdenv.mkDerivation {
           name = "c_formatter_42-patched";
           src = c_formatter_42_src;
-          #patch = ./rename-binary.patch;
           installPhase = ''
             mkdir -p $out/c_formatter_42/{data,formatters}
             cp $src/setup.{py,cfg} $src/LICENSE $src/README.md $out
@@ -25,10 +29,8 @@
             cp $src/c_formatter_42/data/*.py $out/c_formatter_42/data
             cp $src/c_formatter_42/data/.clang-format $out/c_formatter_42/data
             cp $src/c_formatter_42/formatters/*.py $out/c_formatter_42/formatters
-            ln -s ${pkgs.writeShellScript "clang-format-linux" 
-            '' ${pkgs.clang-tools}/bin/clang-format "$@" ''
-            } $out/c_formatter_42/data/clang-format-linux
-            ${pkgs.tree}/bin/tree $out
+            ln -s ${clang-format-wrapper} $out/c_formatter_42/data/clang-format-linux
+            ln -s ${clang-format-wrapper} $out/c_formatter_42/data/clang-format-darwin
           '';
         };
         c_formatter_42_drv = pkgs.python311Packages.buildPythonApplication {
