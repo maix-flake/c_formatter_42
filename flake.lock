@@ -3,11 +3,11 @@
     "c_formatter_42_src": {
       "flake": false,
       "locked": {
-        "lastModified": 1727700580,
-        "narHash": "sha256-GFnYVipVE6G1GFUqAzRkBSg7GgPgcLWX48GZtmM4i2Q=",
+        "lastModified": 1732535934,
+        "narHash": "sha256-RazCNWa0upC1z4tAOVB/sut0YXa7bgtp9ZyUue5rcSk=",
         "owner": "dawnbeen",
         "repo": "c_formatter_42",
-        "rev": "a255930b4be508a94bf6d8523d96556bdb4660ad",
+        "rev": "2d72ced7b209cbfa0343f0c208b22ab5fab885cd",
         "type": "github"
       },
       "original": {
