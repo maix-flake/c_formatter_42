@@ -3,11 +3,11 @@
     "c_formatter_42_src": {
       "flake": false,
       "locked": {
-        "lastModified": 1732535934,
-        "narHash": "sha256-RazCNWa0upC1z4tAOVB/sut0YXa7bgtp9ZyUue5rcSk=",
+        "lastModified": 1733560990,
+        "narHash": "sha256-+9c8Ljz/x2Q6TNzR/mVgVAAIYUGSlXxnEUm2296NwpM=",
         "owner": "dawnbeen",
         "repo": "c_formatter_42",
-        "rev": "2d72ced7b209cbfa0343f0c208b22ab5fab885cd",
+        "rev": "410326ffc7862e290d8d1c7f63a987c88e6fe05a",
         "type": "github"
       },
       "original": {
@@ -37,8 +37,8 @@
     "nixpkgs": {
       "locked": {
         "lastModified": 0,
-        "narHash": "sha256-jNRNr49UiuIwaarqijgdTR2qLPifxsVhlJrKzQ8XUIE=",
-        "path": "/nix/store/h5v6brw3yj14b52a58imzjm3mid6scsz-source",
+        "narHash": "sha256-M1+uCoV5igihRfcUKrr1riygbe73/dzNnzPsmaLCmpo=",
+        "path": "/nix/store/vqhkmj60457j8nrw9vb94ln40rkic1p6-source",
         "type": "path"
       },
       "original": {
