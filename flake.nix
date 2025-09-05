@@ -37,7 +37,9 @@
           pname = "c_formatter_42";
           version = "1.0";
           src = src_patched;
-          buildInputs = [pkgs.clang-tools];
+          buildInputs = [pkgs.clang-tools ];
+          pyproject = true;
+          build-system = [ pkgs.python311Packages.setuptools ];
         };
       in {
         packages = rec {
