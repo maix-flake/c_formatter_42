@@ -31,6 +31,7 @@
             cp $src/c_formatter_42/formatters/*.py $out/c_formatter_42/formatters
             ln -s ${clang-format-wrapper} $out/c_formatter_42/data/clang-format-linux
             ln -s ${clang-format-wrapper} $out/c_formatter_42/data/clang-format-darwin
+            ln -s ${clang-format-wrapper} $out/c_formatter_42/data/clang-format-darwin-arm64
           '';
         };
         c_formatter_42_drv = pkgs.python311Packages.buildPythonApplication {
